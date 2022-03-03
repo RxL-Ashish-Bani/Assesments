@@ -1,0 +1,146 @@
+//class PersonFields{
+//    String name;
+//    int age;
+//    String gender;
+//    String address;
+//}
+//PersonFields Person=new PersonFields(name:"Ashish",age:21,gender: "Male",address: "Delhi");
+//Person.setName("Ashish");
+//Person.setAge(21);
+//Person.setGender("Male");
+//Person.setAddress("Delhi");
+//println(Person.getName());
+//println(Person.getAge());
+//println(Person.getGender());
+//println(Person.getAddress());
+//Person.name="Ashish";
+//Person.age=21;
+//Person.gender="Male";
+//Person.address="Delhi";
+//println(Person.name);
+//println(Person.age);
+//println(Person.gender);
+//println(Person.address);
+
+//class person extends PersonFields{
+//    String empID;
+//    String company;
+//    int Salary;
+//}
+//person Person=new person();
+//Person.name="Ashish";
+//Person.age=21;
+//Person.gender="Male";
+//Person.address="Delhi";
+//Person.empID="Rx-050757";
+//Person.company="RxLogix";
+//Person.Salary=30000;
+//println(Person.name);
+//println(Person.age);
+//println(Person.gender);
+//println(Person.address);
+//println(Person.empID);
+//println(Person.company);
+//println(Person.Salary);
+
+
+//int n=4;
+//for (int i=0;i<n; i++){
+//    for (int j=0;j<2**i;j++){
+//        print("*");
+//    }
+//    println();
+//}
+
+//class Person{
+//    int empID;
+//    int salary;
+//    int age;
+//    String address;
+//    String company;
+//    def function(){
+//        return "Sachin is a man aged ${age} who lives at ${address}. He works for ${company} with Emp ID ${empID} and draws ${salary} amount of money.";
+//    }
+//}
+//Person person=new Person(empID: 12,salary: 20000,age: 21,address: "Delhi",company: "Intelligrape");
+//def a=person.function().toString();
+//println(a);
+
+//println(person.getEmpID().toString());
+//println(Integer.toString(person.getEmpID()));
+
+//if("test"){
+//    println("test evaluated to true inside if");
+//}
+
+//if([]){
+//    println("test evaluated to true inside if");
+//}
+//else {
+//    println("test not evaluated")
+//}
+
+//if([null,null]){
+//    println("test evaluated to true inside if");
+//}
+//else{
+//    println("test not evaluated")
+//}
+
+//List list=new ArrayList();
+//list << null;
+//if (list){
+//    println("Test evaluated");
+//}
+
+//class HourMinute{
+//    int Hour;
+//    int Minute;
+//    HourMinute(int Hour,int Minute){
+//        this.Hour=Hour;
+//        this.Minute=Minute;
+//    }
+//    def plus(HourMinute time){
+//        return new HourMinute(this.Hour+time.Hour,this.Minute+time.Minute);
+//    }
+//    def minus(HourMinute time){
+//        return new HourMinute(this.Hour-time.Hour,this.Minute-time.Minute);
+//    }
+//    public String toString(){
+//        return "Hour : "+Hour+"\n"+"Minute : "+Minute;
+//    }
+//}
+//HourMinute time1=new HourMinute(4,24);
+//HourMinute time2=new HourMinute(10,20);
+//HourMinute time3=time1+time2;
+//println(time3);
+//println();
+//time4=time1-time2;
+//println(time4);
+
+//(7) Print multiple of 3
+
+//def a=10.times {var->
+//    var++;
+//    println(var*3);
+//}
+
+//List list=[1,2,3,4,5,6,7,8,9,10];
+//list.each {
+//    println(it*3);
+//}
+
+//groovy.lang.Range r=1..10;
+//r.each {println(it*3)};
+
+
+//(8) Closure
+
+//List list=[12,23,4,56,71,9];
+//int i=23;
+//list.each {
+//    if (it==i){
+//        println("Value is pesent");
+//    }
+//}
+
