@@ -1,0 +1,113 @@
+#TASK 1 
+:- Creating Employee DB
+1. create employee(emp_id,employee_name,department_id,location_id,salary), 
+   department(dept_id,department_name),
+   locations (location_id, location_name) tables with relevant attributes.
+2. create primary key on each table and foreign keys (location->department, department->employee)
+ex: emp_id is PK in emp table, dept_id is PK in dept table, loc_id is PK in location table.
+3. insert 20 employees data, 4 departments data, 2 locations data.
+
+4. write below queries:
+a) display all employees names and their department names
+b) display all location_name, department_name, employee_name, salary for all matching rows from 3 tables
+a) select maximum salary earned from each department
+b) select 2nd highest salary from each department.
+c) select location_name, department_name, average_salary(of each location)
+
+additional queries:
+>> Show departments with no of employees
+>> Show locations with no of department where no of department is 2
+
+	
+	Answers : 
+
+-- create table locations (location_id int, location_name varchar(255), primary key(location_id));
+
+-- create table department (dept_id int, department_name varchar(255), primary key(dept_id));
+
+-- create table employee (emp_id int,
+-- employee_name varchar(255),
+-- department_id int,
+-- location_id int,
+-- salary number,
+-- primary key (emp_id),
+-- foreign key (location_id) references locations(location_id),
+-- foreign key (department_id) references department(dept_id));
+
+-- insert into locations values (1,'noida1');
+
+--insert into locations values (2,'noida2');
+
+--select * from locations;
+
+--insert into department values (01,'Engg1');
+
+--insert into department values (02,'Engg2');
+
+--insert into department values (03,'Engg3');
+
+--insert into department values (04,'Engg4');
+
+-- select * from department;
+
+-- insert into employee values (001,'A1',01,1,1000);
+
+-- insert into employee values (002,'A2',02,2,2000);
+
+-- insert into employee values (003,'A3',03,1,3000);
+
+-- insert into employee values (004,'A4',04,2,4000);
+
+-- insert into employee values (005,'A5',01,1,5000);
+
+-- insert into employee values (006,'A6',02,2,1000);
+
+-- insert into employee values (007,'A7',03,1,2000);
+
+-- insert into employee values (008,'A8',04,2,3000);
+
+-- insert into employee values (009,'A9',01,1,4000);
+
+-- insert into employee values (010,'A10',02,2,5000);
+
+-- insert into employee values (011,'A11',03,1,6000);
+
+-- insert into employee values (012,'A12',04,2,7000);
+
+-- insert into employee values (013,'A13',01,1,8000);
+
+-- insert into employee values (014,'A14',02,2,9000);
+
+-- insert into employee values (015,'A15',01,2,10000);
+
+-- insert into employee values (016,'A16',02,1,11000);
+
+-- insert into employee values (017,'A17',03,2,12000);
+
+-- insert into employee values (018,'A18',04,1,11000);
+
+-- insert into employee values (019,'A19',01,2,10000);
+
+-- insert into employee values (020,'A20',02,1,9000);
+
+-- select * from employee;
+
+-- select employee.employee_name, department.department_name from employee inner join department on employee.department_id=department.dept_id;
+
+-- select locations.location_name,department.department_name,employee_name,salary from 
+-- (employee inner join locations on employee.location_id=locations.location_id) inner join 
+-- department on employee.department_id=department.dept_id;
+
+-- select dept_id,Max(salary)from employee inner join department on employee.department_id=department.dept_id group by dept_id
+
+-- select dept_id,Max(salary) from employee inner join department on employee.department_id=department.dept_id where salary <> (Select Max(salary) from Employee) group by dept_id ;
+
+-- select location_name, department_name, avg(salary) from ((employee inner join
+-- department on department_id=dept_id) inner join 
+-- locations on employee.location_id=locations.location_id) group by locations.location_name, department_name
+
+-- select dept_id, count(*) from employee join department on department_id=dept_id group by dept_id
+
+-- select locations.location_id, count(*) from (employee join 
+-- department on department_id=dept_id ) join
+-- locations on employee.location_id=locations.location_id where locations.location_id=2 group by locations.location_id
